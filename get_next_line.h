@@ -6,16 +6,12 @@
 /*   By: jeonjeon <jeonjeon@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 17:46:26 by jeonjeon          #+#    #+#             */
-/*   Updated: 2022/02/04 23:32:03 by jeonjeon         ###   ########.fr       */
+/*   Updated: 2022/02/10 23:23:56 by jeonjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1000
-# endif
 
 # include <stdlib.h>
 # include <unistd.h>

@@ -6,7 +6,7 @@
 /*   By: jeonjeon <jeonjeon@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 17:45:25 by jeonjeon          #+#    #+#             */
-/*   Updated: 2022/02/04 23:26:42 by jeonjeon         ###   ########.fr       */
+/*   Updated: 2022/02/10 23:07:53 by jeonjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*get_return(char *save)
 	size_t		idx;
 
 	idx = 0;
-	if (!save[idx])
+	if (save[idx] == '\0')
 		return (0);
 	while (save[idx] != '\n' && save[idx] != '\0')
 		idx++;
@@ -57,7 +57,7 @@ char	*get_return(char *save)
 	}
 	if (save[idx] == '\n')
 	{
-		line[idx] = save[idx];
+		line[idx] = '\n';
 		idx++;
 	}
 	line[idx] = '\0';
