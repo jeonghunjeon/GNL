@@ -6,7 +6,7 @@
 /*   By: jeonjeon <jeonjeon@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 17:45:25 by jeonjeon          #+#    #+#             */
-/*   Updated: 2022/02/10 23:07:53 by jeonjeon         ###   ########.fr       */
+/*   Updated: 2022/02/15 11:31:04 by jeonjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*get_before(int fd, char *save)
 	if (!buff)
 		return (0);
 	read_bytes = 1;
-	while (read_bytes != 0 && !ft_strchr(save, '\n'))
+	while (read_bytes > 0 && !ft_strchr(save, '\n'))
 	{
 		read_bytes = read(fd, buff, BUFFER_SIZE);
 		if (read_bytes == -1)
@@ -46,7 +46,7 @@ char	*get_return(char *save)
 		return (0);
 	while (save[idx] != '\n' && save[idx] != '\0')
 		idx++;
-	line = malloc(idx + 1);
+	line = malloc(idx + 2);
 	if (!line)
 		return (0);
 	idx = 0;
