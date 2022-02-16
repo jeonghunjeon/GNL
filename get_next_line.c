@@ -6,7 +6,7 @@
 /*   By: jeonjeon <jeonjeon@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 17:45:25 by jeonjeon          #+#    #+#             */
-/*   Updated: 2022/02/15 11:31:04 by jeonjeon         ###   ########.fr       */
+/*   Updated: 2022/02/16 18:17:50 by jeonjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,10 +99,7 @@ char	*get_next_line(int fd)
 		return (0);
 	save = get_before(fd, save);
 	if (!save)
-	{
-		free(save);
 		return (0);
-	}
 	ret = get_return(save);
 	save = give_save(save);
 	return (ret);
