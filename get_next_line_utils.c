@@ -6,7 +6,7 @@
 /*   By: jeonjeon <jeonjeon@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 05:23:38 by jeonjeon          #+#    #+#             */
-/*   Updated: 2022/02/04 23:22:57 by jeonjeon         ###   ########.fr       */
+/*   Updated: 2022/02/16 18:14:54 by jeonjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,12 +71,8 @@ void	ft_strlcat(char *dst, const char *src, size_t size)
 
 char	*ft_strjoin(char *s1, char *s2)
 {
-	int		s1_len;
-	int		s2_len;
 	char	*ret;
 
-	s1_len = ft_strlen(s1);
-	s2_len = ft_strlen(s2);
 	if (!s1)
 	{
 		s1 = malloc(1);
@@ -85,12 +81,18 @@ char	*ft_strjoin(char *s1, char *s2)
 		s1[0] = 0;
 	}
 	if (!s2)
+	{
+		free(s1);
 		return (0);
-	ret = (char *)malloc(sizeof(char) * (s1_len + s2_len + 1));
-	if (ret == NULL)
+	}
+	ret = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!ret)
+	{
+		free(s1);
 		return (0);
-	ft_strlcpy(ret, s1, s1_len + 1);
-	ft_strlcat(ret, s2, ft_strlen(ret) + s2_len + 1);
+	}
+	ft_strlcpy(ret, s1, ft_strlen(s1) + 1);
+	ft_strlcat(ret, s2, ft_strlen(ret) + ft_strlen(s2) + 1);
 	free (s1);
 	return (ret);
 }
