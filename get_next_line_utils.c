@@ -6,7 +6,7 @@
 /*   By: jeonjeon <jeonjeon@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 05:23:38 by jeonjeon          #+#    #+#             */
-/*   Updated: 2022/02/16 18:14:54 by jeonjeon         ###   ########.fr       */
+/*   Updated: 2022/02/16 18:50:43 by jeonjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ char	*ft_strjoin(char *s1, char *s2)
 		free(s1);
 		return (0);
 	}
-	ret = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	ret = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!ret)
 	{
 		free(s1);

@@ -6,7 +6,7 @@
 /*   By: jeonjeon <jeonjeon@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 17:45:25 by jeonjeon          #+#    #+#             */
-/*   Updated: 2022/02/16 18:17:50 by jeonjeon         ###   ########.fr       */
+/*   Updated: 2022/02/27 11:47:16 by jeonjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,11 @@ char	*get_before(int fd, char *save)
 		}
 		buff[read_bytes] = '\0';
 		save = ft_strjoin(save, buff);
+		if (!save)
+		{
+			free(buff);
+			return (0);
+		}
 	}
 	free(buff);
 	return (save);
